@@ -1,3 +1,3 @@
 # SmallPDF
 
-https://app.exchangerate-api.com/dashboard
+https://ratesapi.io/documentation/

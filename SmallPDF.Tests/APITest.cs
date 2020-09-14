@@ -1,5 +1,8 @@
+using SmallPDF.Helpers;
+using SmallPDF.Model.DTO;
 using SmallPDF.Services;
 using System;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -10,10 +13,21 @@ namespace SmallPDF.Tests
         [Fact]
         public async Task HTTPRequestTest()
         {
-            string apiKey = "5ed7abf4a14bb9e20ad0f63a";
-            string currency = "USD";
-            var uriAPI = $"https://v6.exchangerate-api.com/v6/{apiKey}/latest/{currency}";
+            var uriAPI = $"https://api.ratesapi.io/api/latest";
             var apiResponse = await HTTPService.GET_CallAsync(uriAPI);
+
+            Assert.True(apiResponse.StatusCode == System.Net.HttpStatusCode.OK);
+        }
+
+        [Fact]
+        public async Task HTTPRequestConversionTest()
+        {
+            string from = "EUR";
+            string to = "GBP";
+            var uriAPI = $"https://api.ratesapi.io/api/latest?base={from}&symbols={to}";
+            var apiResponse = await HTTPService.GET_CallAsync(uriAPI);
+
+            var exchangeResult = JsonSerializer.Deserialize<APIExchangeObject>(await apiResponse.Content.ReadAsStringAsync());
 
             Assert.True(apiResponse.StatusCode == System.Net.HttpStatusCode.OK);
         }
