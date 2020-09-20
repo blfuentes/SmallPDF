@@ -5,8 +5,157 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmallPDF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Icon="icon.ico"
+        Title="{x:Static local:Resources.ttlMainWindow}" Height="450" Width="800" 
+        ResizeMode="NoResize">
 
+    <Window.Resources>
+        <Style x:Key="ListViewStyle" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <!-- Selection -->
+            <RowDefinition Height="5*" />
+            <!-- MainView -->
+            <RowDefinition Height="0.5*" />
+            <!-- StatusBar -->
+        </Grid.RowDefinitions>
+
+        <!-- Selection -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <!-- From -->
+                <ColumnDefinition />
+                <!-- To -->
+            </Grid.ColumnDefinitions>
+            <!-- From -->
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="5 10">
+                <Label Name="lblFromCurrency" x:Uid="lblFromCurreny"
+                       Margin="5 10" Width="200" Content="{x:Static local:Resources.lblFromCurreny}">
+
+                </Label>
+                <ComboBox Name="cmbFromCurrency"
+                          Margin="5 10" Width="150"
+                          DisplayMemberPath="TextDisplay"
+                          ItemsSource="{Binding Currencies, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding SelectedFromCurrency}">
+
+                </ComboBox>
+            </StackPanel>
+            <!-- To -->
+            <StackPanel Grid.Column="1" Orientation="Horizontal"  Margin="5 10">
+                <Label Name="lblToCurrency" x:Uid="lblToCurreny"
+                       Margin="5 10" Width="200" Content="{x:Static local:Resources.lblToCurreny}">
+
+                </Label>
+                <ComboBox Name="cmbToCurrency"
+                          Margin="5 10" Width="150" 
+                          DisplayMemberPath="TextDisplay"
+                          ItemsSource="{Binding Currencies, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedItem="{Binding SelectedToCurrency}">
+
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+        <!-- MainView -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <!-- Input -->
+                <ColumnDefinition />
+                <!-- Admin -->
+            </Grid.ColumnDefinitions>
+            <!-- Input -->
+            <StackPanel Grid.Row="1">
+                <Label Name="lblFromInput" Content="{x:Static local:Resources.lblFromInput}" />
+                <TextBox Name="txtFromInput" Text="{Binding InputValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="{Binding InputEnabled, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Name="lblToInput" Content="{x:Static local:Resources.lblToInput}" />
+                <Label Name="lblToOuputResult" 
+                       Content="{Binding OutputValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+            <!-- Admin -->
+            <Grid Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*" /> <!-- Grid -->
+                        <RowDefinition Height="1*" /> <!-- Input -->
+                        <RowDefinition Height="1*" /> <!-- Commands -->
+                    </Grid.RowDefinitions>
+                    <!-- Grid -->
+                    <ListView Height="220" VerticalAlignment="Top"
+                              ItemsSource="{Binding Currencies, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                              HorizontalAlignment="Center" HorizontalContentAlignment="Left"
+                              ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" 
+                              SelectedItem="{Binding SelectedCurreny, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn HeaderContainerStyle="{StaticResource ListViewStyle}" 
+                                                Header="{x:Static local:Resources.lstColumnName}" Width="305" DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn HeaderContainerStyle="{StaticResource ListViewStyle}" 
+                                                Header="{x:Static local:Resources.lstColumnCode}" Width="60" DisplayMemberBinding="{Binding Code}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <!-- Input -->
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="3">
+                        <TextBox Width="290" Margin="10"
+                                 Text="{Binding SelectedCurreny.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 IsEnabled="{Binding EditionMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            
+                        </TextBox>
+                        <TextBox Width="55" Margin="10" MaxLength="3"
+                                 Text="{Binding SelectedCurreny.Code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                 IsEnabled="{Binding EditionMode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+                        </TextBox>
+                    </StackPanel>
+                    <!-- Commands -->
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="cmdAddCurrency" Margin="5 10" Width="85"
+                                Command="{Binding AddCurrencyCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/SmallPDF;component/Images/add.png" Width="15" Height="15" Margin="0 0 10 0"/>
+                                <TextBlock Text="{x:Static local:Resources.btnAddCurrency}" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="cmdEditCurrency" Margin="5 10" Width="85"
+                                Command="{Binding EditCurrencyCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/SmallPDF;component/Images/edit.png" Width="15" Height="15" Margin="0 0 10 0"/>
+                                <TextBlock Text="{x:Static local:Resources.btnEditCurrency}" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="cmdDeleteCurrency" Margin="5 10" Width="85"
+                                Command="{Binding DeleteCurrencyCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/SmallPDF;component/Images/delete.png" Width="15" Height="15" Margin="0 0 10 0"/>
+                                <TextBlock Text="{x:Static local:Resources.btnDeleteCurrency}" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="cmdSaveCurrency" Margin="5 10" Width="85"
+                                Command="{Binding SaveCurrencyCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/SmallPDF;component/Images/save.png" Width="15" Height="15" Margin="0 0 10 0"/>
+                                <TextBlock Text="{x:Static local:Resources.btnSaveCurrency}" VerticalAlignment="Center" />
+                            </StackPanel>                            
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+        <!-- StatusBar -->
+        <StatusBar Grid.Row="2">
+            <StatusBarItem 
+                HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"
+                VerticalAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <Label Name="lblStatusInfo" HorizontalAlignment="Right" Content="{Binding StatusInfo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></Label>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>

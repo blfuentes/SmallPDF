@@ -1,7 +1,15 @@
-﻿using System;
+﻿using SmallPDF.Model;
+using SmallPDF.Model.DTO;
+using SmallPDF.Services;
+using SmallPDF.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +31,7 @@ namespace SmallPDF
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowViewModel();
         }
     }
 }

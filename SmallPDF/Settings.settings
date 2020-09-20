@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SmallPDF" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AvailableCurrenciesFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">./AppData/AvailableCurrencies.xml</Value>
+    </Setting>
+    <Setting Name="CollectionName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">currencies</Value>
+    </Setting>
+    <Setting Name="RootName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">currency</Value>
+    </Setting>
+    <Setting Name="CodeProperty" Type="System.String" Scope="User">
+      <Value Profile="(Default)">code</Value>
+    </Setting>
+    <Setting Name="NameProperty" Type="System.String" Scope="User">
+      <Value Profile="(Default)">name</Value>
+    </Setting>
+    <Setting Name="SymbolProperty" Type="System.String" Scope="User">
+      <Value Profile="(Default)">symbol</Value>
+    </Setting>
+    <Setting Name="IdProperty" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Id</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

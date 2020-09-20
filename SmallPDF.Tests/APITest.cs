@@ -30,6 +30,7 @@ namespace SmallPDF.Tests
             var exchangeResult = JsonSerializer.Deserialize<APIExchangeObject>(await apiResponse.Content.ReadAsStringAsync());
 
             Assert.True(apiResponse.StatusCode == System.Net.HttpStatusCode.OK);
+            Assert.NotNull(exchangeResult);
         }
     }
 }

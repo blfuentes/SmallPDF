@@ -1,35 +1,35 @@
 ﻿<currencies>
-    <currency code="AUD" name ="Australian dollar" symbol ="" />
-    <currency code="BGN" name ="Bulgarian lev" symbol ="" />
-    <currency code="BRL" name ="Brazilian real" symbol ="" />
-    <currency code="CAD" name ="Canadian dollar" symbol ="" />
-    <currency code="CHF" name ="Swiss franc" symbol ="" />
-    <currency code="CNY" name ="Chinese yuan" symbol ="" />
-    <currency code="CZK" name ="Czech koruna" symbol ="" />
-    <currency code="DKK" name ="Danish krone" symbol ="" />
-    <currency code="EUR" name ="Euro" symbol ="" />
-    <currency code="GBP" name ="Pound sterling" symbol ="" />
-    <currency code="HKD" name ="Hong Kond dollar" symbol ="" />
-    <currency code="HRK" name ="Croatian kuna" symbol ="" />
-    <currency code="HUF" name ="Hungarian forint" symbol ="" />
-    <currency code="IDR" name ="Indonesian rupiah" symbol ="" />
-    <currency code="ILS" name ="Israeli new shekel" symbol ="" />
-    <currency code="INR" name ="Indian rupee" symbol ="" />
-    <currency code="ISK" name ="Icelandic króna" symbol ="" />
-    <currency code="JPY" name ="Japanese yen" symbol ="" />
-    <currency code="KRW" name ="South Korean won" symbol ="" />
-    <currency code="MXN" name ="Mexican peso" symbol ="" />
-    <currency code="MYR" name ="Malaysian ringgit" symbol ="" />
-    <currency code="NOK" name ="Norwegian krone" symbol ="" />
-    <currency code="NZD" name ="New Zealand dollar" symbol ="" />
-    <currency code="PHP" name ="Philippine peso" symbol ="" />
-    <currency code="PLN" name ="Polish zloty" symbol ="" />
-    <currency code="RON" name ="Romanian leu" symbol ="" />
-    <currency code="RUB" name ="Russian rube" symbol ="" />
-    <currency code="SEK" name ="Swedish krona" symbol ="" />
-    <currency code="SGD" name ="Singapore dollar" symbol ="" />
-    <currency code="THB" name ="Thai baht" symbol ="" />
-    <currency code="TRY" name ="Turkish lira" symbol ="" />
-    <currency code="USD" name ="United States dollar" symbol ="" />
-    <currency code="ZAR" name ="South African rand" symbol ="" />
+    <currency Id="1" code="AUD" name ="Australian dollar" symbol ="" />
+    <currency Id="2" code="BGN" name ="Bulgarian lev" symbol ="" />
+    <currency Id="3" code="BRL" name ="Brazilian real" symbol ="" />
+    <currency Id="4" code="CAD" name ="Canadian dollar" symbol ="" />
+    <currency Id="5" code="CHF" name ="Swiss franc" symbol ="" />
+    <currency Id="6" code="CNY" name ="Chinese yuan" symbol ="" />
+    <currency Id="7" code="CZK" name ="Czech koruna" symbol ="" />
+    <currency Id="8" code="DKK" name ="Danish krone" symbol ="" />
+    <currency Id="9" code="EUR" name ="Euro" symbol ="" />
+    <currency Id="10" code="GBP" name ="Pound sterling" symbol ="" />
+    <currency Id="11" code="HKD" name ="Hong Kond dollar" symbol ="" />
+    <currency Id="12" code="HRK" name ="Croatian kuna" symbol ="" />
+    <currency Id="13" code="HUF" name ="Hungarian forint" symbol ="" />
+    <currency Id="14" code="IDR" name ="Indonesian rupiah" symbol ="" />
+    <currency Id="15" code="ILS" name ="Israeli new shekel" symbol ="" />
+    <currency Id="16" code="INR" name ="Indian rupee" symbol ="" />
+    <currency Id="17" code="ISK" name ="Icelandic króna" symbol ="" />
+    <currency Id="18" code="JPY" name ="Japanese yen" symbol ="" />
+    <currency Id="19" code="KRW" name ="South Korean won" symbol ="" />
+    <currency Id="20" code="MXN" name ="Mexican peso" symbol ="" />
+    <currency Id="21" code="MYR" name ="Malaysian ringgit" symbol ="" />
+    <currency Id="22" code="NOK" name ="Norwegian krone" symbol ="" />
+    <currency Id="23" code="NZD" name ="New Zealand dollar" symbol ="" />
+    <currency Id="24" code="PHP" name ="Philippine peso" symbol ="" />
+    <currency Id="25" code="PLN" name ="Polish zloty" symbol ="" />
+    <currency Id="26" code="RON" name ="Romanian leu" symbol ="" />
+    <currency Id="27" code="RUB" name ="Russian rube" symbol ="" />
+    <currency Id="28" code="SEK" name ="Swedish krona" symbol ="" />
+    <currency Id="29" code="SGD" name ="Singapore dollar" symbol ="" />
+    <currency Id="30" code="THB" name ="Thai baht" symbol ="" />
+    <currency Id="31" code="TRY" name ="Turkish lira" symbol ="" />
+    <currency Id="32" code="USD" name ="United States dollar" symbol ="" />
+    <currency Id="33" code="ZAR" name ="South African rand" symbol ="" />
 </currencies>

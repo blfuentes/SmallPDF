@@ -18,6 +18,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="TempData\AvailableCurrenciesDelete.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TempData\AvailableCurrenciesUpdate.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TempData\AvailableCurrenciesAdd.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TempData\AvailableCurrencies.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
